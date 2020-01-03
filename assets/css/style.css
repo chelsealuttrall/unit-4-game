@@ -1,0 +1,119 @@
+main {
+    z-index: 0;
+    background-color: rgb(92, 4, 4);
+    background-size: cover;
+}
+
+.spacer {
+    height: 2rem;
+}
+
+.title {
+    z-index: 1;
+    background-image: url("../images/cropped.jpg");
+    background-color: rgb(92, 4, 4);
+    border: 2px solid black;
+    _width: 100%;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    position: relative;
+    background-position-y: -7rem;
+    background-repeat: no-repeat;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+h3 {
+    z-index: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+h4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.Arena {
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.DeNiro {
+    width: 250px;
+    background-color: lightgray;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+}
+
+.img {
+    height: 100px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.middle {
+    height: auto;
+    width: 200px;
+}
+
+#theBench {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#battleground {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#button {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+button {
+    background-color: lightgray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    border-radius: 4px;
+    border: 2px solid black;
+    text-shadow: -1px 0 lightgray;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(255, 0, 0, 0.24), 0 17px 50px 0 rgba(255, 0, 0, 0.19);
+}
+
+button:active {
+    background-color: red;
+}
