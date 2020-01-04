@@ -10,14 +10,14 @@ main {
 
 .title {
     z-index: 1;
-    background-image: url("../images/cropped.jpg");
+    background-image: url("../images/fockercropped.jpg");
     background-color: rgb(92, 4, 4);
     border: 2px solid black;
     _width: 100%;
     background-size: cover;
     background-blend-mode: hard-light;
     position: relative;
-    background-position-y: -7rem;
+    _background-position-y: -7rem;
     background-repeat: no-repeat;
     height: auto;
     display: flex;
