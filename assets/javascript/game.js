@@ -16,6 +16,11 @@ let health = 0;
 let attackPower = 0;
 let counterPower = 0;
 
+let babyHTML = document.querySelector("#baby")
+let youngHTML = document.querySelector("#young")
+let middleHTML = document.querySelector("#middle")
+let oldHTML = document.querySelector("#old")
+
 let baby = {
     health: 10,
     attackPower: 5,
@@ -40,68 +45,72 @@ let old = {
     counterPower: 5,
 };
 
-let babyHTML = document.querySelector("#baby")
-let youngHTML = document.querySelector("#young")
-let middleHTML = document.querySelector("#middle")
-let oldHTML = document.querySelector("#old")
+let deniros = [baby, young, middle, old];
+let fighters = [];
 
-let deniros = [babyHTML, youngHTML, middleHTML, oldHTML]
 
-//babyHTML.click(function() {
 
 $("#baby").click(function() {
-    $("#choose").remove("")
+    // $(fighters).push(baby)
+    $("#choose").css({ "text-decoration": "line-through" })
     $(this).appendTo("#battleground")
-
     $("#young").appendTo("#theBench")
     $("#middle").appendTo("#theBench")
     $("#old").appendTo("#theBench")
-
+    babyHTML.id = "#babyAgain"
     youngHTML.id = "#youngAgain"
     middleHTML.id = "#middleAgain"
-    oldHTML = "#oldAgain"
+    oldHTML.id = "#oldAgain"
+    console.log(fighters);
 });
 
-
-
-//character selection clicks
 $("#young").click(function() {
-    $("#choose").remove("")
+    //  $(this).appendTo(fighters)
+    $("#choose").css({ "text-decoration": "line-through" })
     $(this).appendTo("#battleground")
     $("#baby").appendTo("#theBench")
     $("#middle").appendTo("#theBench")
     $("#old").appendTo("#theBench")
-
     babyHTML.id = "#babyAgain"
+    youngHTML.id = "#youngAgain"
     middleHTML.id = "#middleAgain"
-    oldHTML = "#oldAgain"
+    oldHTML.id = "#oldAgain"
+    console.log(fighters);
 });
 
 $("#middle").click(function() {
-    $("#choose").remove("")
+    // $(this).appendTo(fighters)
+    $("#choose").css({ "text-decoration": "line-through" })
     $(this).appendTo("#battleground")
     $("#young").appendTo("#theBench")
     $("#baby").appendTo("#theBench")
     $("#old").appendTo("#theBench")
     babyHTML.id = "#babyAgain"
     youngHTML.id = "#youngAgain"
-    oldHTML = "#oldAgain"
+    middleHTML.id = "middleAgain"
+    oldHTML.id = "#oldAgain"
+    console.log(fighters);
 });
 
 $("#old").click(function() {
-    $("#choose").remove("")
+    // $(this).appendTo(fighters)
+    $("#choose").css({ "text-decoration": "line-through" })
     $(this).appendTo("#battleground")
     $("#young").appendTo("#theBench")
     $("#middle").appendTo("#theBench")
     $("#baby").appendTo("#theBench")
     babyHTML.id = "#babyAgain"
     middleHTML.id = "#middleAgain"
-    youngHTML = "#youngAgain"
+    youngHTML.id = "#youngAgain"
+    oldHTML.id = "#oldAgain"
+    console.log(fighters);
 });
 
+console.log(fighters);
 //nemesis selection clicks
 
 $("#youngAgain").click(function() {
+    $(this).remove("#theBench")
     $(this).appendTo("#battleground")
 });
 
@@ -116,3 +125,28 @@ $("#oldAgain").click(function() {
 $("#babyAgain").click(function() {
     $(this).appendTo("#battleground")
 });
+
+
+
+
+
+//if (#battleground.children = 2) //lock ability to click
+
+//$(deniros).click(function() {
+//    for (i = 0; i < 2; i++) {
+//        $(deniros).appendTo(fighters);
+//    }
+//    $(fighters).appendTo("#battleground"),
+//        $("#choose").css({ "text-decoration": "line-through" });
+//});
+
+//character selection click
+//babyHTML.click(function() {
+
+//$(deniros).click(function() {
+//
+//    $("#choose").css({ "text-decoration": "line-through" }),
+//        $(this).appendTo("#battleground");
+//});
+
+//for (i = 0; i < 1; i++)
