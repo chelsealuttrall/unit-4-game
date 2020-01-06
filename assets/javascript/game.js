@@ -1,27 +1,13 @@
-//`Health Points`, `Attack Power` and `Counter Attack Power`.
-//* Each time the player attacks, their character's Attack Power increases by its base Attack Power. 
-//  * For example, if the base Attack Power is 6, each attack will increase the Attack Power by 6 (12, 18, 24, 30 and so on).
-//* The enemy character only has `Counter Attack Power`. 
-//
-//  * Unlike the player's `Attack Points`, `Counter Attack Power` never changes.
-//
-//* The `Health Points`, `Attack Power` and `Counter Attack Power` of each character must differ.
-//
-//* No characters in the game can heal or recover Health Points. 
-//
-//  * A winning player must pick their characters wisely by first fighting an enemy with low `Counter Attack Power`. This will allow them to grind `Attack Power` and to take on enemies before they lose all of their `Health Points`. Healing options would mess with this dynamic.
-//
-//* Your players should be able to win and lose the game no matter what character they choose. The challenge should come from picking the right enemies, not choosing the strongest player.
 let health = 0;
 let attackPower = 0;
 let counterPower = 0;
 
-//switch over to jquery
+//characters
 let babyHTML = $("#baby")
 let youngHTML = $("#young")
 let middleHTML = $("#middle")
 let oldHTML = $("#old")
-
+    //character traits
 let baby = {
     health: 10,
     attackPower: 5,
@@ -45,15 +31,12 @@ let old = {
     attackPower: 5,
     counterPower: 5,
 };
-
+//arrays of characters for actions
 let deniros = [baby, young, middle, old];
 let fighters = [];
-let f = ["#baby", "#young", "#middle", "#old"]
-
-
-
+let f = ["#baby", "#young", "#middle", "#old"];
+//click functions for moving characters
 $("#baby").click(function() {
-    // $(fighters).push(baby)
     if (fighters.length < 2) {
         $("#choose").css({ "text-decoration": "line-through" })
         $(this).appendTo("#battleground")
@@ -126,48 +109,46 @@ $("#old").click(function() {
         console.log(fighters);
     }
 });
-
-
-
-
 console.log(fighters);
-//nemesis selection clicks
 
-//$("#youngAgain").click(function() {
-//    $(this).remove("#theBench")
-//    $(this).appendTo("#battleground")
-//});
+
+//have fighters "fight" eachother
+let myNewPower;
+
+$("<button>Bang!</button>").click(function() {
+    fighters[0] = {
+        health = health - (fighters[1].counterPower)
+        myNewPower = attackPower + attackPower
+        counterPower = counterPower
+    }
+
+    fighters[1] = {
+        health = health - (fighters[0].attackPower)
+        attackPower = attackPower
+        counterPower = counterPower
+    }
+
+
+
+
+});
+
+return myNewPower = fighters[0].attackPower
+
+//connect that function to BANG button
+
+//clear defeated fighter out of battleground
+
+//tally loss or win
+
+//win=select new nemesis
+
 //
-//$("#middleAgain").click(function() {
-//    $(this).appendTo("#battleground")
-//});
+//  * Unlike the player's `Attack Points`, `Counter Attack Power` never changes.
 //
-//$("#oldAgain").click(function() {
-//    $(this).appendTo("#battleground")
-//});
+//* The `Health Points`, `Attack Power` and `Counter Attack Power` of each character must differ.
 //
-//$("#babyAgain").click(function() {
-//    $(this).appendTo("#battleground")
-//});
-
-
-//if (#battleground.children = 2) //lock ability to click
-
-//$(deniros).click(function() {
-//    for (i = 0; i < 2; i++) {
-//        $(deniros).appendTo(fighters);
-//    }
-//    $(fighters).appendTo("#battleground"),
-//        $("#choose").css({ "text-decoration": "line-through" });
-//});
-
-//character selection click
-//babyHTML.click(function() {
-
-//$(deniros).click(function() {
+//* No characters in the game can heal or recover Health Points. 
 //
-//    $("#choose").css({ "text-decoration": "line-through" }),
-//        $(this).appendTo("#battleground");
-//});
-
-//for (i = 0; i < 1; i++)
+//  * A winning player must pick their characters wisely by first fighting an enemy with low `Counter Attack Power`. This will allow them to grind `Attack Power` and to take on enemies before they lose all of their `Health Points`. Healing options would mess with this dynamic.
+////* Your players should be able to win and lose the game no matter what character they choose. The challenge should come from picking the right enemies, not choosing the strongest player.
