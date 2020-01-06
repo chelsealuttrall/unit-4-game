@@ -31,6 +31,13 @@ let old = {
     attackPower: 5,
     counterPower: 5,
 };
+
+let myHealth = fighters[0].health
+let nemesisHealth = fighters[1].health
+
+$("#myHealthHTML").append(myHealth);
+$("#nemesisHealthHTML").append(nemesisHealth);
+
 //arrays of characters for actions
 let deniros = [baby, young, middle, old];
 let fighters = [];
@@ -113,42 +120,34 @@ console.log(fighters);
 
 
 //have fighters "fight" eachother
-let myNewPower;
+let myNewPower = fighters[0].attackPower;
+//connect that function to BANG button
 
 $("<button>Bang!</button>").click(function() {
     fighters[0] = {
-        health = health - (fighters[1].counterPower)
-        myNewPower = attackPower + attackPower
-        counterPower = counterPower
+        health: health - (fighters[1].counterPower)
+        myNewPower: fighters[0].attackPower + fighters[0].attackPower
+        counterPower: counterPower;
     }
 
     fighters[1] = {
-        health = health - (fighters[0].attackPower)
-        attackPower = attackPower
-        counterPower = counterPower
+        health: health - (fighters[0].attackPower)
+        attackPower: attackPower
+        counterPower: counterPower;
     }
+}) return myNewPower = fighters[0].attackPower;
 
-
-
-
-});
-
-return myNewPower = fighters[0].attackPower
-
-//connect that function to BANG button
 
 //clear defeated fighter out of battleground
 
-//tally loss or win
+if $(myHealth) = 0 {
+    //game over
+    //tally loss or win
 
-//win=select new nemesis
+}
 
-//
-//  * Unlike the player's `Attack Points`, `Counter Attack Power` never changes.
-//
-//* The `Health Points`, `Attack Power` and `Counter Attack Power` of each character must differ.
-//
-//* No characters in the game can heal or recover Health Points. 
-//
-//  * A winning player must pick their characters wisely by first fighting an enemy with low `Counter Attack Power`. This will allow them to grind `Attack Power` and to take on enemies before they lose all of their `Health Points`. Healing options would mess with this dynamic.
-////* Your players should be able to win and lose the game no matter what character they choose. The challenge should come from picking the right enemies, not choosing the strongest player.
+if $(nemesisHealth) = 0 {
+    //tally loss or win
+    //win=select new nemesis
+
+}
