@@ -32,8 +32,9 @@ let old = {
     counterPower: 5,
 };
 
-let myHealth = fighters[0].health
-let nemesisHealth = fighters[1].health
+let myHealth = fighters[0].health;
+let winTally = "#winTally"
+let nemesisHealth = fighters[1].health;
 
 $("#myHealthHTML").append(myHealth);
 $("#nemesisHealthHTML").append(nemesisHealth);
@@ -137,17 +138,15 @@ $("<button>Bang!</button>").click(function() {
     }
 }) return myNewPower = fighters[0].attackPower;
 
-
-//clear defeated fighter out of battleground
-
-if $(myHealth) = 0 {
-    //game over
-    //tally loss or win
-
-}
-
-if $(nemesisHealth) = 0 {
-    //tally loss or win
-    //win=select new nemesis
-
-}
+if (myHealth <= 0), {
+    $("#myHealthHTML").append("GAME OVER")
+    $("<button>Bang!</button>").hide();
+};
+else if (nemesisHealth <= 0) {
+    winTally = "" + 1
+    $(fighters[1]).remove("#battleground")
+};
+else if //all defeated, you win
+(wins = 3) {
+    $(document).alert("YOU ARE THE TOUGHEST DE NIRO")
+};
