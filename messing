@@ -1,0 +1,8 @@
+let collection(1) = [2, 3, 4]
+let collection(2) = [5, 10]
+
+
+
+findAverage = function () {
+ for collection
+}

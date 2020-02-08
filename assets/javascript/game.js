@@ -42,20 +42,27 @@ let fighters = [];
 let f = ["#baby", "#young", "#middle", "#old"];
 
 
-let player = "";
-//let myHealth = fighters[0].health;
-//let winTally = "#winTally"
-//let nemesisHealth = fighters[1].health;
-//
-//$("#myHealthHTML").append(myHealth);
-//$("#nemesisHealthHTML").append(nemesisHealth);
+let player = []
+    //let myHealth = fighters[0].health;
+    //let winTally = "#winTally"
+winTally = 0
+
+$("#winTally").append(`  ` + winTally)
+
 
 for (let i = 0; i < deniros.length; i++) {
     $(deniros[i].cssID).click(function() {
         if (fighters.length <= 0) {
             player = `#${this.id}`
+            if fighters.length = 1 { $("#myHealthHTML").append(deniros[0].health) }
+            if fighters.length = 2 {
+                $("#nemesisHealthHTML").append(deniros[1].health);
+            }
+
         }
-        console.log(player)
+        console.log(deniros[i].health)
+
+
 
         if (fighters.length < 2) {
             let id = `#${this.id}`
@@ -69,12 +76,24 @@ for (let i = 0; i < deniros.length; i++) {
             for (let j = 0; j < f.length; j++) {
                 $(f[j]).appendTo("#theBench")
             }
-            console.log(f)
-            console.log(fighters);
+
         }
     });
-
 }
+
+console.log(f)
+
+//$(deniros).onclick(
+for (let l = 0; l < fighters.length; l++)
+    $(fighters[l].cssID).click(function() {
+        $("#myHealthHTML").append(fighters[0].health) || $("#nemesisHealthHTML").append(fighters[1].health);
+
+    });
+//
+//$("#myHealthHTML").append(myHealth);
+//$("#nemesisHealthHTML").append(nemesisHealth);
+
+
 
 //click functions for moving characters
 
@@ -169,4 +188,4 @@ $("#button").click(function() {
 //        console.log(fighters);
 //    }
 //});
-//console.log(fighters);
+//console.log(fighters);s
