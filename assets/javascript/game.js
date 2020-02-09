@@ -43,52 +43,61 @@ let f = ["#baby", "#young", "#middle", "#old"];
 
 
 let player = []
-    //let myHealth = fighters[0].health;
-    //let winTally = "#winTally"
+
 winTally = 0
 
 $("#winTally").append(`  ` + winTally)
 
 
 for (let i = 0; i < deniros.length; i++) {
+
     $(deniros[i].cssID).click(function() {
-        if (fighters.length <= 0) {
-            player = `#${this.id}`
-            if fighters.length = 1 { $("#myHealthHTML").append(deniros[0].health) }
-            if fighters.length = 2 {
-                $("#nemesisHealthHTML").append(deniros[1].health);
+
+            if (fighters.length < 2) {
+                let id = `#${this.id}`
+                $("#choose").css({ "text-decoration": "line-through" })
+                $(id).appendTo("#battleground")
+                fighters.push(id)
+                console.log(fighters)
+
+                f = f.filter(function(element) {
+                    return element !== id;
+                })
+                for (let j = 0; j < f.length; j++) {
+                    $(f[j]).appendTo("#theBench")
+                }
+
+                player = fighters[0].replace("#", "")
+                console.log(fighters[0].replace("#", ""))
+                $("#myHealthHTML").append(player.health)
             }
+            //      if (fighters.length = 1) {
+            //        $("#nemesisHealthHTML").append(deniros[i].health)
+            //    }
 
-        }
-        console.log(deniros[i].health)
+        })
+        //console.log(deniros[i].health)
 
 
 
-        if (fighters.length < 2) {
-            let id = `#${this.id}`
-            $("#choose").css({ "text-decoration": "line-through" })
-            $(id).appendTo("#battleground")
-            fighters.push(id)
 
-            f = f.filter(function(element) {
-                return element !== id;
-            })
-            for (let j = 0; j < f.length; j++) {
-                $(f[j]).appendTo("#theBench")
-            }
 
-        }
-    });
-}
+
+};
+
+
+
+
+
 
 console.log(f)
 
 //$(deniros).onclick(
-for (let l = 0; l < fighters.length; l++)
-    $(fighters[l].cssID).click(function() {
-        $("#myHealthHTML").append(fighters[0].health) || $("#nemesisHealthHTML").append(fighters[1].health);
+//for (let l = 0; l < fighters.length; l++)
+//    $(fighters[l].cssID).click(function() {
+//      $("#myHealthHTML").append(fighters[0].health) //$("#nemesisHealthHTML").append(fighters[1].health);
 
-    });
+//});
 //
 //$("#myHealthHTML").append(myHealth);
 //$("#nemesisHealthHTML").append(nemesisHealth);
