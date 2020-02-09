@@ -53,29 +53,33 @@ for (let i = 0; i < deniros.length; i++) {
 
     $(deniros[i].cssID).click(function() {
 
-            if (fighters.length < 2) {
-                let id = `#${this.id}`
-                $("#choose").css({ "text-decoration": "line-through" })
-                $(id).appendTo("#battleground")
-                fighters.push(id)
-                console.log(fighters)
+        if (fighters.length < 2) {
 
-                f = f.filter(function(element) {
-                    return element !== id;
-                })
-                for (let j = 0; j < f.length; j++) {
-                    $(f[j]).appendTo("#theBench")
-                }
+            let id = `#${this.id}`
+            $("#choose").css({ "text-decoration": "line-through" })
+            $(id).appendTo("#battleground")
+            fighters.push(id)
+            console.log(fighters)
 
-                player = fighters[0].replace("#", "")
-                console.log(fighters[0].replace("#", ""))
-                $("#myHealthHTML").append(player.health)
+            f = f.filter(function(element) {
+                return element !== id;
+            })
+            for (let j = 0; j < f.length; j++) {
+                $(f[j]).appendTo("#theBench")
             }
-            //      if (fighters.length = 1) {
-            //        $("#nemesisHealthHTML").append(deniros[i].health)
-            //    }
 
-        })
+            player = fighters[0] //.replace("#", "")]
+            console.log(player)
+            $("#myHealthHTML").append(deniros[i].health)
+
+
+
+            let nemesis = fighters[1]
+            console.log(nemesis)
+            $("#nemesisHealthHTML").append(deniros[i].health)
+
+
+        }
         //console.log(deniros[i].health)
 
 
@@ -83,8 +87,8 @@ for (let i = 0; i < deniros.length; i++) {
 
 
 
+    })
 };
-
 
 
 
@@ -197,4 +201,4 @@ $("#button").click(function() {
 //        console.log(fighters);
 //    }
 //});
-//console.log(fighters);s
+//console.log(fighters);
