@@ -43,8 +43,14 @@ let f = ["#baby", "#young", "#middle", "#old"];
 
 
 let player = []
-
-winTally = 0
+let nemesis
+let winTally = 0
+let playerHealth
+let playerAttack
+let nemesisHealth
+let nemesisCounter
+let newPlayerHealth
+let newNemesisHealth
 
 $("#winTally").append(`  ` + winTally)
 
@@ -71,66 +77,57 @@ for (let i = 0; i < deniros.length; i++) {
         if (fighters.length < 2) {
             player = fighters[0] //.replace("#", "")]
             console.log(player)
-            $("#myHealthHTML").append(deniros[i].health)
+            playerHealth = deniros[i].health
+            playerAttack = deniros[i].attackPower
+            $("#myHealthHTML").append(playerHealth)
         } else if (fighters.length < 3) {
             let nemesis = fighters[1]
             console.log(nemesis)
-            $("#nemesisHealthHTML").append(deniros[i].health)
+            nemesisHealth = deniros[i].health
+            nemesisCounter = deniros[i].counterPower
+            $("#nemesisHealthHTML").append(nemesisHealth)
         } else {
             console.log("no action")
         }
-
-
-        //console.log(deniros[i].health)
-
-
-
-
-
-
+        return nemesisCounter;
+        return playerAttack;
     })
 };
 
-
-
-
-
 console.log(f)
 
-//$(deniros).onclick(
-//for (let l = 0; l < fighters.length; l++)
-//    $(fighters[l].cssID).click(function() {
-//      $("#myHealthHTML").append(fighters[0].health) //$("#nemesisHealthHTML").append(fighters[1].health);
+var shootout = $(function() {
+    let nowPlayerHealth = $("#myHealthHTML").text.parseInt
+    let nowNemesisHealth = $("#nemesisHealthHTML").text.parseInt
+    newPlayerHealth = nowPlayerHealth - nemesisCounter
+    newNemesisHealth = nowNemesisHealth - playerAttack
 
-//});
-//
-//$("#myHealthHTML").append(myHealth);
-//$("#nemesisHealthHTML").append(nemesisHealth);
-
-
-
-//click functions for moving characters
-
-
-//have fighters "fight" eachother
-//let myNewPower = fighters[0].attackPower;
-//connect that function to BANG button
+});
 
 $("#button").click(function() {
     console.log("button")
-        // fighters[0] = {
-        //     health: health - (fighters[1].counterPower)
-        //     myNewPower: fighters[0].attackPower + fighters[0].attackPower
-        //     counterPower: counterPower;
-        // }
-        //
-        // fighters[1] = {
-        //     health: health - (fighters[0].attackPower)
-        //     attackPower: attackPower
-        //     counterPower: counterPower;
-        // }
-        // return myNewPower = fighters[0].attackPower
+
+    function shootout() {
+        return newPlayerHealth
+        return newNemesisHealth;
+
+    }
+    console.log(newPlayerHealth)
+    console.log(newNemesisHealth)
+    $("#myHealthHTML").append(newPlayerHealth)
+    $("#nemesisHealthHTML").append(newNemesisHealth);
 });
+
+//
+// fighters[1] = {
+//     health: health - (fighters[0].attackPower)
+//     attackPower: attackPower
+//     counterPower: counterPower;
+// }
+// return myNewPower = fighters[0].attackPower
+//});
+
+
 
 //if (myHealth <= 0), {
 //    $("#myHealthHTML").append("GAME OVER")
@@ -144,62 +141,3 @@ $("#button").click(function() {
 //(wins = 3) {
 //    $(document).alert("YOU ARE THE TOUGHEST DE NIRO")
 //};
-
-//
-//$("#young").click(function() {
-//    if (fighters.length < 2) {
-//
-//        $("#choose").css({ "text-decoration": "line-through" })
-//        $(this).appendTo("#battleground")
-//
-//        fighters.push("#young")
-//        f = f.filter(function(element) {
-//            return element !== "#young";
-//        })
-//        for (let i = 0; i < f.length; i++) {
-//            $(f[i]).appendTo("#theBench")
-//        }
-//
-//        console.log(f)
-//        console.log(fighters);
-//    }
-//});
-//
-//$("#middle").click(function() {
-//    if (fighters.length < 2) {
-//
-//        $("#choose").css({ "text-decoration": "line-through" })
-//        $(this).appendTo("#battleground")
-//
-//        fighters.push("#middle")
-//        f = f.filter(function(element) {
-//            return element !== "#middle";
-//        })
-//        for (let i = 0; i < f.length; i++) {
-//            $(f[i]).appendTo("#theBench")
-//        }
-//
-//        console.log(this)
-//        console.log(fighters);
-//    }
-//});
-//
-//$("#old").click(function() {
-//    if (fighters.length < 2) {
-//
-//        $("#choose").css({ "text-decoration": "line-through" })
-//        $(this).appendTo("#battleground")
-//
-//        fighters.push("#old")
-//        f = f.filter(function(element) {
-//            return element !== "#old";
-//        })
-//        for (let i = 0; i < f.length; i++) {
-//            $(f[i]).appendTo("#theBench")
-//        }
-//
-//        console.log(this)
-//        console.log(fighters);
-//    }
-//});
-//console.log(fighters);
