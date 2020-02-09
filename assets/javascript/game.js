@@ -67,19 +67,20 @@ for (let i = 0; i < deniros.length; i++) {
             for (let j = 0; j < f.length; j++) {
                 $(f[j]).appendTo("#theBench")
             }
-
+        }
+        if (fighters.length < 2) {
             player = fighters[0] //.replace("#", "")]
             console.log(player)
             $("#myHealthHTML").append(deniros[i].health)
-
-
-
+        } else if (fighters.length < 3) {
             let nemesis = fighters[1]
             console.log(nemesis)
             $("#nemesisHealthHTML").append(deniros[i].health)
-
-
+        } else {
+            console.log("no action")
         }
+
+
         //console.log(deniros[i].health)
 
 
