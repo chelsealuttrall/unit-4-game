@@ -89,7 +89,7 @@ for (let i = 0; i < deniros.length; i++) {
         } else {
             console.log("no action")
         }
-        return nemesisCounter;
+        return nemesisCounter
         return playerAttack;
     })
 };
@@ -98,7 +98,10 @@ console.log(f)
 
 //var shootout = $(function() {});
 
-$("#button").click(function() {
+//console.log($(playerHealth))
+
+let regPlay = function() {
+
     console.log("button")
     $(function() {
         let nowPlayerHealth = $("#myHealthHTML").text()
@@ -114,6 +117,29 @@ $("#button").click(function() {
         $("#myHealthHTML").text(newPlayerHealth)
         $("#nemesisHealthHTML").text(newNemesisHealth);
     })
+}
+
+
+
+
+let gameOver = function() {
+    $("#myHealthHTML").text("GAME OVER")
+    console.log($("#myHealthHTML").text())
+    $("<button>Bang!</button>").hide();
+    console.log("Choke, choke, gurgle, gurgle, mlehhhhh");
+}
+
+$(document).ready(function() {
+    $("#button").click(function() {
+        let h = $("#myHealthHTML").text();
+        console.log(h)
+        if (h > 1) {
+            return regPlay();
+        } else {
+            return gameOver();
+        }
+    })
+
 });
 
 
@@ -121,8 +147,7 @@ $("#button").click(function() {
 
 
 //if (myHealth <= 0), {
-//    $("#myHealthHTML").append("GAME OVER")
-//    $("<button>Bang!</button>").hide();
+//    
 //};
 //else if (nemesisHealth <= 0) {
 //    winTally = "" + 1
