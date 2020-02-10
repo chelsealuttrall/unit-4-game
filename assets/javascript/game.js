@@ -124,8 +124,9 @@ let regPlay = function() {
 
 let gameOver = function() {
     $("#myHealthHTML").text("GAME OVER")
-    console.log($("#myHealthHTML").text())
-    $("<button>Bang!</button>").hide();
+        //console.log($("#myHealthHTML").text())
+        //$("<button>Bang!</button>").hide();
+        //if I have time, I'll make this appear on a pop up or something
     console.log("Choke, choke, gurgle, gurgle, mlehhhhh");
 }
 
