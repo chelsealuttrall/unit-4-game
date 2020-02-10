@@ -79,13 +79,13 @@ for (let i = 0; i < deniros.length; i++) {
             console.log(player)
             playerHealth = deniros[i].health
             playerAttack = deniros[i].attackPower
-            $("#myHealthHTML").append(playerHealth)
+            $("#myHealthHTML").text(playerHealth)
         } else if (fighters.length < 3) {
             let nemesis = fighters[1]
             console.log(nemesis)
             nemesisHealth = deniros[i].health
             nemesisCounter = deniros[i].counterPower
-            $("#nemesisHealthHTML").append(nemesisHealth)
+            $("#nemesisHealthHTML").text(nemesisHealth)
         } else {
             console.log("no action")
         }
@@ -96,36 +96,27 @@ for (let i = 0; i < deniros.length; i++) {
 
 console.log(f)
 
-var shootout = $(function() {
-    let nowPlayerHealth = $("#myHealthHTML").text.parseInt
-    let nowNemesisHealth = $("#nemesisHealthHTML").text.parseInt
-    newPlayerHealth = nowPlayerHealth - nemesisCounter
-    newNemesisHealth = nowNemesisHealth - playerAttack
-
-});
+//var shootout = $(function() {});
 
 $("#button").click(function() {
     console.log("button")
-
-    function shootout() {
-        return newPlayerHealth
-        return newNemesisHealth;
-
-    }
-    console.log(newPlayerHealth)
-    console.log(newNemesisHealth)
-    $("#myHealthHTML").append(newPlayerHealth)
-    $("#nemesisHealthHTML").append(newNemesisHealth);
+    $(function() {
+        let nowPlayerHealth = $("#myHealthHTML").text()
+            //console.log(nowPlayerHealth)
+        let nowNemesisHealth = $("#nemesisHealthHTML").text()
+        newPlayerHealth = nowPlayerHealth - nemesisCounter
+            //console.log(newPlayerHealth)
+        newNemesisHealth = nowNemesisHealth - playerAttack
+            //   return newPlayerHealth
+            //return newNemesisHealth
+        console.log(newPlayerHealth)
+        console.log(newNemesisHealth)
+        $("#myHealthHTML").text(newPlayerHealth)
+        $("#nemesisHealthHTML").text(newNemesisHealth);
+    })
 });
 
-//
-// fighters[1] = {
-//     health: health - (fighters[0].attackPower)
-//     attackPower: attackPower
-//     counterPower: counterPower;
-// }
-// return myNewPower = fighters[0].attackPower
-//});
+
 
 
 
