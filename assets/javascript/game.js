@@ -132,24 +132,22 @@ let gameOver = function() {
 
 //start here on my win function
 
-let winFunction = function() {
-    let n = $("#nemesisHealthHTML").text();
-    if (n < 1) {
-        $("div#button").hide();
-        $(winTally).val() = +1
-    }
-}
+
 
 
 $(document).ready(function() {
     $("#button").click(function() {
         let h = $("#myHealthHTML").text();
+        let n = $("#nemesisHealthHTML").text()
         console.log(h)
         if (h > 1) {
             return regPlay()
-            return winFunction();
+        } else if (n < 1) {
+            $("div#button").hide()
+            $(winTally).val() += 1
+            $("#nemesisHealthHTML").text("Choke, choke, gurgle, gurle, mlehhhhhh --- You win!")
         } else {
-            return gameOver();
+            return gameOver()
         }
     })
 });
