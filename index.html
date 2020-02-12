@@ -12,6 +12,15 @@
 
 <body>
     <main id="background">
+        <div class="popup-overlay">
+            <!--Creates the popup content-->
+            <div class="popup-content">
+                <h3 id="victorDeniroHTML"></h3>
+                <h2>You are the toughest Deniro!</h2>
+                <img id="deniroPic" src="">
+                <p>Refresh the page to play again</p>
+            </div>
+        </div>
         <div class="title">
 
             <h1>The De Niro Face-Off</h1>
@@ -45,12 +54,15 @@
         <div id="healths">
             <h3>My Health: </h3>
             <h3 id="myHealthHTML"> </h3>
-            <h3 id="winTally">Wins: </h3>
+            <h3>Wins: </h3>
+            <h3 id="winTally"></h3>
             <h3>Nemesis' Health: </h3>
             <h3 id="nemesisHealthHTML"></h3>
         </div>
         <div id="button"><button>Bang!</button></div>
+
     </main>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>

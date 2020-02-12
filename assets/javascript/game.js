@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+
+
     let health = 0;
     let attackPower = 0;
     let counterPower = 0;
@@ -53,6 +56,7 @@ $(document).ready(function() {
     let newPlayerHealth
     let newNemesisHealth
 
+    $("div.popup-overlay").hide()
     $("#winTally").append(`  ` + winTally)
 
 
@@ -120,6 +124,11 @@ $(document).ready(function() {
     }
 
 
+    let ultimateVictor = function() {
+        //$("#deniroPic").append()
+        $("div.popup-overlay").show()
+    }
+
 
 
     let gameOver = function() {
@@ -147,34 +156,24 @@ $(document).ready(function() {
             $("div#button").hide()
             winTally += 1
             $("#winTally").text(winTally)
-            $("#nemesisHealthHTML").text("Choke, choke, gurgle, gurle, mlehhhhhh --- You win!")
-            let nem = fighters[1];
-
-            fighters = fighters.filter(function(fighter) {
-                return fighter != nem;
-            })
-            console.log(nem)
-            console.log(fighters);
-            $(nem).hide();
-            $("div#button").show()
+            if (winTally >= 3) {
+                return ultimateVictor()
+            } else {
+                $("#nemesisHealthHTML").text("Choke, choke, gurgle, gurgle, mlehhhhhh --- You win!")
+                let nem = fighters[1];
+                fighters = fighters.filter(function(fighter) {
+                        return fighter != nem;
+                    })
+                    //console.log(nem) 
+                    //console.log(fighters);
+                $(nem).hide();
+                $("div#button").show()
+            }
 
         }
     })
+
+
+
+
 });
-
-
-
-
-
-
-//if (myHealth <= 0), {
-//    
-//};
-//else if (nemesisHealth <= 0) {
-//    winTally = "" + 1
-//    $(fighters[1]).remove("#battleground")
-//};
-//else if //all defeated, you win
-//(wins = 3) {
-//    $(document).alert("YOU ARE THE TOUGHEST DE NIRO")
-//};
