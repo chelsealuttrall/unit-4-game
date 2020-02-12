@@ -119,9 +119,9 @@ button:active {
 }
 
 .popup-overlay {
+    width: 90%;
     text-align: center;
     padding: 50px 0 0 0;
-    width: 90%;
     z-index: 5;
     position: absolute;
     top: 150px;
